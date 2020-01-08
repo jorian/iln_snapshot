@@ -1,0 +1,13 @@
+[package]
+name = "iln_snapshot"
+version = "0.1.0"
+authors = ["jorian <jorian@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+komodo_rpc_client = "0.1.1"
+komodo_airdrop =  "0.0.2"
+csv = "1.1.2"
+serde = "1.0.104"
