@@ -1,4 +1,4 @@
 /target
-/snapshot.csv
+/snapshot*
 /.idea
 /Cargo.lock

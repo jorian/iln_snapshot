@@ -2,6 +2,7 @@ extern crate komodo_airdrop;
 extern crate komodo_rpc_client;
 extern crate csv;
 extern crate serde;
+extern crate chrono;
 
 use komodo_airdrop::Snapshot;
 use komodo_rpc_client::Chain;
@@ -24,7 +25,10 @@ fn main() {
 }
 
 fn write_hashmap_to_csv(map: &HashMap<String, f64>) -> Result<(), Error> {
-    let mut writer = csv::Writer::from_path("./snapshot.csv").expect("Problem while creating snapshot file");
+    let date = chrono::Utc::now();
+    let date = date.format("%Y-%m-%d").to_string();
+
+    let mut writer = csv::Writer::from_path(format!("./snapshot_{}.csv", date)).expect("Problem while creating snapshot file");
 
     map.iter().for_each(|(key, value)| {
         writer.serialize((key, value)).expect("Problem during serialization");
