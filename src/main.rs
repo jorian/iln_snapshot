@@ -12,7 +12,7 @@ use csv::Error;
 fn main() {
     let snapshot = Snapshot::builder()
         .on_chain(Chain::Custom("ILN".to_string()))
-        .using_threshold(1.0)
+        .using_threshold(0.4999)
         .build()
         .expect("Failed to create snapshot of ILN chain");
 
